@@ -1,0 +1,144 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --light: hsl(136deg, 100%, 60%);
+  --dark: hsl(136deg, 15%, 10%);
+}
+
+body {
+  background-color: black;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clock {
+  border: 20px double var(--light);
+  border-radius: 10%;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+}
+
+.digit, .colon{
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 100px;
+  margin: 0px 15px;
+}
+
+
+/*COLON*/
+.colon {
+  margin: 0 -10px;
+}
+
+.colon span{
+  position: absolute;
+  background-color: var(--light);
+  width: 20px;
+  height: 20px;
+}
+
+.top-colon {
+  top: 45px;
+  left: 40px;
+}
+
+.bottom-colon {
+  top: 135px;
+  left: 40px;
+}
+
+
+/*AM/PM*/
+.meridian {
+  width: 100px;
+  height: 200px;
+}
+
+.meridian span {
+  color: var(--dark);
+  display: block;
+  text-align: center;
+  font-size: 50px;
+}
+
+/*DIGIT*/
+.top {
+  left: 2px;
+  position: absolute;
+  border-top: 10px solid var(--light);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 96px;
+}
+
+.top-left, .bottom-left {
+  top: 2px;
+  position: absolute;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--light);
+  height: 96px;
+  width: 0;
+}
+
+.bottom-left {
+  top: calc(50% + 2px);
+}
+
+.top-right, .bottom-right {
+  top: 2px;
+  left: 90px;
+  position: absolute;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--light);
+  height: 96px;
+  width: 0;
+}
+
+.bottom-right {
+  top: calc(50% + 2px);
+}
+
+.bottom {
+  left: 2px;
+  top: 190px;
+  position: absolute;
+  border-bottom: 10px solid var(--dark);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 96px;
+}
+
+.middle-bottom {
+  top: calc(50%);
+  position: absolute;
+  border-top: 5px solid var(--light);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 100px;
+
+}
+
+.middle-top {
+  top: calc(50% - 5px);
+  position: absolute;
+  border-bottom: 5px solid var(--light);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 100px;
+}
